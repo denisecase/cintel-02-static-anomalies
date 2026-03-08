@@ -104,6 +104,10 @@ uv self update
 uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 
+uvx pre-commit install
+git add -A
+uvx pre-commit run --all-files
+
 uv run python -m cintel.anomaly_detector_case
 
 uv run ruff format .

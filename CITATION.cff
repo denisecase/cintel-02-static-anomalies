@@ -1,0 +1,51 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include CITATION.cff.
+# WHY: Support correct citation and attribution.
+# ALT: Internal or private repositories may omit citation metadata.
+# CUSTOM: Update author, repository, license, and keyword fields as needed.
+# USAGE: See https://citation-file-format.github.io/ for details.
+
+cff-version: "1.2.0"
+type: software
+
+title: Continuous Intelligence 02 Static Anomalies
+date-released: "2026-03-06"
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, USA"
+
+repository-code: "https://github.com/denisecase/cintel-02-static-anomalies"
+url: "https://github.com/denisecase/cintel-02-static-anomalies"
+license: MIT
+
+abstract: |
+  Continuous Intelligence Example Project 2 - Static Anomalies.
+  Demonstrates professional Python project structure and workflows.
+
+keywords:
+  # identity
+  - data analytics
+  - continuous intelligence
+  - static anomalies
+
+  # practices
+  - professional workflows
+  - reproducible workflows
+  - software quality
+
+  # tools and ecosystem
+  - python
+  - git
+  - github
+  - pre-commit
+  - uv
+  - ruff
+  - zensical
+
+message: "If using this project, please cite it as described in this file."

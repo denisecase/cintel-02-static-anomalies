@@ -120,4 +120,3 @@ This discussion connects static anomaly detection to **continuous intelligence s
 If you would like to apply these skills to a real dataset instead of the provided example data, see suggested datasets:
 
 https://denisecase.github.io/pro-analytics-02/reference/datasets/cintel/
-
