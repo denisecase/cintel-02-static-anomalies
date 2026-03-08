@@ -1,6 +1,7 @@
 # cintel-02-static-anomalies
 
-[![Python](https://img.shields.io/badge/python-3.14-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
+[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
 > Professional Python project for continuous intelligence.
 
@@ -30,10 +31,14 @@ the detection logic works.
 
 ## Data
 
-The example pipeline reads **pediatric clinic** age and height data from: `data/clinic_data_case.csv`.
-It creates reasonable thresholds and outputs anomalies - data outside the expected threshold.
+The example pipeline reads **pediatric clinic** age and height
+data from: `data/clinic_data_case.csv`.
+It creates reasonable thresholds and outputs
+**anomalies** (data outside the expected threshold).
 
-You'll copy the Python file and make it your own (see docs/your-files.md), and perform a similar analysis on `data/clinic_data_yourname.csv` given **adult clinic** age and height data.
+You'll copy the Python file and make it your own (see docs/your-files.md),
+and perform a similar analysis on `data/clinic_data_yourname.csv`
+given **adult clinic** age and height data.
 
 ## Working Files
 
@@ -64,7 +69,8 @@ Working through issues is part of implementing professional projects.
 
 ## Success
 
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project, running on your machine, and running the example will print out:
+After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
+running on your machine, and running the example will print out:
 
 ```shell
 ========================
