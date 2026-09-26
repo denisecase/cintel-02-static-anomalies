@@ -1,8 +1,5 @@
 """
-anomaly_detector_case.py - Project script (example).
-
-Author: Denise Case
-Date: 2026-03-07
+anomaly_detector.py - Project script (example).
 
 Static Data
 
@@ -41,8 +38,8 @@ import logging
 from pathlib import Path
 from typing import Final
 
-import polars as pl
 from datafun_toolkit.logger import get_logger, log_header, log_path
+import polars as pl
 
 # === CONFIGURE LOGGER ===
 

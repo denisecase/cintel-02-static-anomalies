@@ -7,9 +7,9 @@ Follow the instructions in
 
 Complete:
 
-1. Phase 1. **Start & Run** – copy the project and confirm it runs
-2. Phase 2. **Change Authorship** – update the project to your name and GitHub account
-2. Phase 3. **Read & Understand** – review the project structure and code
+1. Phase 1. **Start & Run**
+2. Phase 2. **Read & Understand**
+3. Phase 3. **Take Ownership**
 
 ## FRIDAY/SUNDAY: Complete Workflow Phases 4-5
 
