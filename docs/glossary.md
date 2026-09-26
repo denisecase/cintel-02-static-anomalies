@@ -38,3 +38,7 @@ It begins with clarity and experience:
 - What do we expect?
 - What violates that expectation?
 - How do we detect and document it?
+
+---
+
+[◄ Back to 🏠 Home](index.md)
