@@ -17,7 +17,7 @@ The dataset contains 22 patient observations with:
 - `age_years` - patient age in years.
 - `height_inches` - patient height in inches.
 
-[View Example Dataset](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/data/clinic_data_case.csv)
+[View Example Dataset](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/data/clinic_data.csv)
 
 ## Methods
 
@@ -41,7 +41,7 @@ The example pipeline identified **3 anomalous records**.
 | 10          | 72              | Height threshold |
 | 120         | 66              | Age threshold    |
 
-[View Anomaly Results](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/artifacts/anomalies_case.csv)
+[View Anomaly Results](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/artifacts/anomalies.csv)
 
 ## Interpretation
 

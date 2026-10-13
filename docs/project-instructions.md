@@ -39,7 +39,7 @@ Follow [Workflow D: Apply Skills](https://denisecase.github.io/pro-analytics-02/
 **Your problem:** Identify potentially unusual records
 in an adult clinic dataset.
 
-Use the provided `data/clinic_data_yourname.csv`
+Use the provided `data/clinic_data.csv`
 as the starting dataset for your independent project.
 
 ### Progression 1. Your Project Works Like the Example

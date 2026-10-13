@@ -66,7 +66,7 @@ uv run python -m cintel.anomaly_detector
 ## Results
 
 The pipeline identifies observations exceeding the example thresholds
-and writes the flagged records to `artifacts/anomalies_case.csv`.
+and writes the flagged records to `artifacts/anomalies.csv`.
 Review the generated CSV to understand which observations were flagged
 and why.
 
