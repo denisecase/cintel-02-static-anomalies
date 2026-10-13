@@ -1,43 +1,39 @@
 # Glossary
 
-In this first module, we focus only on:
+This module focuses on how to:
 
-- **Detect deviations in a static dataset using clearly defined domain rules.**
+- **Detect deviations** in a static dataset using clearly defined domain rules.
 
 ## Anomaly
 
-An **anomaly** is a value that:
+An **anomaly** is an observation or value that falls outside
+expected limits or violates defined domain rules.
 
-- Falls outside the expected or reasonable range for a given context, and/or
-- Violates the domain rules defined.
+Anomalies depend on **context, assumptions, and domain knowledge**.
 
-Important:
+For example, reasonable age and height ranges differ for:
 
-An anomaly is not universal.
-It depends on **assumptions, context, and domain knowledge**.
+- Children and adults.
+- Humans and other animals.
 
-Sometimes we have real-world information about reasonable thresholds for:
+An anomaly does not necessarily indicate an error.
+It identifies an observation that may warrant investigation.
 
-- Age in years for humans
-- Age in years for human children
-- Age in years for dogs
-- Age in years for cats
-- Age in years for tortoises
-- Height in inches for humans
-- Height in inches for human children
-- Height in inches for dogs
-- Height in inches for cats
-- Height in inches for tortoises
+## Domain Rules
 
-## Understanding Comes First
+**Domain rules** define expected or acceptable values
+based on knowledge of the subject being analyzed.
 
-Continuous Intelligence does not begin with complex models.
+For example, age and height thresholds may be used
+to identify unusual patient records.
 
-It begins with clarity and experience:
+## Anomaly Detection
 
-- What do we expect?
-- What violates that expectation?
-- How do we detect and document it?
+**Anomaly detection** is the process of identifying observations
+that deviate from defined expectations.
+
+Simple threshold-based detection provides an interpretable
+starting point for more advanced monitoring systems.
 
 ---
 

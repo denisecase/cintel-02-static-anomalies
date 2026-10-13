@@ -1,5 +1,7 @@
-"""
-anomaly_detector.py - Project script (example).
+"""anomaly_detector.py - Project script (example).
+
+Author: Your Name Here
+Date: 2026-mm-dd
 
 Static Data
 
@@ -18,17 +20,30 @@ Purpose
 
 Paths (relative to repo root)
 
-    INPUT FILE: data/clinic_data_case.csv
-    OUTPUT FILE: artifacts/anomalies_case.csv
+    INPUT FILE: data/clinic_data.csv
+    OUTPUT FILE: artifacts/anomalies.csv
 
 Terminal command to run this file from the root project folder
 
-    uv run python -m cintel.anomaly_detector_case
+    uv run python -m cintel.anomaly_detector
 
-OBS:
-  Don't edit this file - it should remain a working example.
-  Use as much of this code as you can when creating your own pipeline script,
-  and change the logic to detect anomalies and define thresholds as needed for your project.
+DESIGN:
+
+Use this file to first learn and then apply your skills.
+
+Reusable functions that do the work are kept in a utils file.
+We import functions and pass in what they need through their parentheses.
+Shared utility functions can be imported into a Python
+module or a reactive marimo notebook app.
+
+SKILLS:
+
+- Reading CSV files into Polars DataFrames.
+- Defining and using constants for thresholds.
+- Logging for debugging and transparency.
+- Detecting anomalies based on domain-specific rules.
+
+
 """
 
 # === DECLARE IMPORTS (packages we will use in this project) ===
@@ -40,6 +55,8 @@ from typing import Final
 
 from datafun_toolkit.logger import get_logger, log_header, log_path
 import polars as pl
+
+from cintel.utils_clinic import detect_clinic_anomalies, load_clinic_data
 
 # === CONFIGURE LOGGER ===
 
@@ -53,8 +70,8 @@ ARTIFACTS_DIR: Final[Path] = ROOT_DIR / "artifacts"
 
 # === DECLARE GLOBAL CONSTANTS FOR FILE PATHS ===
 
-DATA_FILE: Final[Path] = DATA_DIR / "clinic_data_case.csv"
-OUTPUT_FILE: Final[Path] = ARTIFACTS_DIR / "anomalies_case.csv"
+DATA_FILE: Final[Path] = DATA_DIR / "clinic_data.csv"
+OUTPUT_FILE: Final[Path] = ARTIFACTS_DIR / "anomalies.csv"
 
 
 # === DEFINE THE MAIN FUNCTION ===
@@ -87,15 +104,12 @@ def main() -> None:
     # ----------------------------------------------------
     # STEP 1: READ CSV DATA FILE INTO A POLARS DATAFRAME (TABLE)
     # ----------------------------------------------------
-    # Polars is great for tabular data.
-    # We will use the polars package to
-    # read csv (comma-separated values) files
-    # into a two dimensional table (DataFrame).
+    # load_clinic_data() just wraps polars' read_csv()
+    # function. You can see what it does in utils_clinic.py.
+    # It's pretty easy to get a CSV file into
+    # a DataFrame (a two-dimensional table).
 
-    # Call the polars library read_csv() method.
-    # Pass in (provide) the DATA_FILE path of the CSV file.
-    # Name the result "df" as is customary.
-    df: pl.DataFrame = pl.read_csv(DATA_FILE)
+    df: pl.DataFrame = load_clinic_data(DATA_FILE)
 
     # Visually inspect the file in the data/ folder.
     # It has columns named `age_years` and `height_inches`.
@@ -121,13 +135,13 @@ def main() -> None:
 
     # Create a new DataFrame named anomalies_df that contains
     # only the rows where EITHER
-    # the age is TOO HIGH OR
-    # the height is TOO HIGH.
-    # A single pipe (|) is the OR operator in polars.
-    # We will use greater than or equal to (>=) to find values at or above the threshold.
-    anomalies_df: pl.DataFrame = df.filter(
-        (pl.col("age_years") >= MAX_REASONABLE_X_VALUE)
-        | (pl.col("height_inches") >= MAX_REASONABLE_Y_VALUE)
+    # the age is TOO HIGH OR the height is TOO HIGH.
+    # See detect_clinic_anomalies() in utils_clinic.py
+    # for exactly how that filter is built.
+    anomalies_df: pl.DataFrame = detect_clinic_anomalies(
+        df,
+        max_age_years=MAX_REASONABLE_X_VALUE,
+        max_height_inches=MAX_REASONABLE_Y_VALUE,
     )
 
     LOG.info(f"Count of anomalies found: {anomalies_df.height}")

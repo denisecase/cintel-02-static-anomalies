@@ -1,21 +1,76 @@
-# 🏠 Continuous Intelligence Project Documentation
+# Static Anomaly Detection
 
-> Use this hosted documentation site to tell your
-> data story. Include a narrative telling your
-> results, observations, and interpretations.
-> Display visuals as needed for a compelling story.
+Continuous Intelligence | Project 02 | Example Report
 
-## Professional Workflow
+## Overview
 
-See [**Workflow B: Apply Example Project**](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to get a project like this running on your machine.
+This project investigates how simple domain thresholds
+can identify unusual observations in static tabular data.
 
-## Professional Projects
+The example analyzes pediatric clinic records to identify
+ages and heights outside defined upper limits.
 
-- We code like the pros to help us **focus on the analytics**.
-- Most files in this repository will never be touched.
-- If curious about a file, check out the
-  [Professional Python Project Explainer](https://denisecase.github.io/professional-python-project-explainer/).
+## Data
+
+The dataset contains 22 patient observations with:
+
+- `age_years` - patient age in years.
+- `height_inches` - patient height in inches.
+
+[View Example Dataset](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/data/clinic_data_case.csv)
+
+## Methods
+
+The pipeline uses Python and Polars to read the data
+and identify observations meeting either condition:
+
+- Age greater than or equal to 16 years.
+- Height greater than or equal to 72 inches.
+
+These are example screening rules, not clinical standards.
+
+Records meeting either condition are saved as anomalies.
+
+## Results
+
+The example pipeline identified **3 anomalous records**.
+
+| Age (years) | Height (inches) | Reason           |
+| ----------- | --------------- | ---------------- |
+| 12          | 95              | Height threshold |
+| 10          | 72              | Height threshold |
+| 120         | 66              | Age threshold    |
+
+[View Anomaly Results](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/artifacts/anomalies_case.csv)
+
+## Interpretation
+
+The results demonstrate that threshold-based detection
+can identify observations requiring further investigation.
+
+The records do not necessarily indicate incorrect data.
+They identify values that warrant review.
+
+For example, the recorded age of 120 years suggests
+a possible data-entry or population-classification issue.
+
+## Limitations
+
+The current rules detect only values exceeding upper limits.
+
+Unusually small measurements, such as a height of 5 inches
+for an eight-year-old, are not detected.
+
+A stronger approach would consider lower limits,
+age-dependent expectations, and domain knowledge.
+
+## Conclusion
+
+Static anomaly detection provides a simple,
+interpretable approach for screening observations.
+
+The same principles can be applied repeatedly as
+new observations arrive in a monitoring system.
 
 ## Documentation Index
 
@@ -25,22 +80,15 @@ to get a project like this running on your machine.
 - [**API**](api.md)
 - [**Reactive App**](./app/index.html)
 
-## How To Set Up This Project Documentation
+## Project Links
 
-Go to your GitHub repository / (More) / Settings / Pages /
-Build and deployment Source = GitHub Actions.
+- [GitHub Repository](https://github.com/denisecase/cintel-02-static-anomalies)
+- [Example Pipeline](https://github.com/denisecase/cintel-02-static-anomalies/blob/main/src/cintel/anomaly_detector.py)
+- [Results and Artifacts](https://github.com/denisecase/cintel-02-static-anomalies/tree/main/artifacts)
 
-We have a helper at `.github/workflows/deploy-zensical.yml` that will
-automagically deploy these documents to a hosted
-project documentation web site.
+## Project Resources
 
-When viewing your GitHub repository **Code** tab,
-click the gear icon in the **About** section on the right
-to provide a short description, check the box to use your
-Pages documentation site, and configure some keywords.
-
-Professional communication is a valuable skill.
-
-## Additional Resources
-
+- [Project Instructions](project-instructions.md)
+- [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
+- [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/).
 - [Suggested Datasets](https://denisecase.github.io/pro-analytics-02/reference/datasets/cintel/)
