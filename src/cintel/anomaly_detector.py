@@ -119,9 +119,9 @@ def main() -> None:
     # ----------------------------------------------------
     # STEP 2: DEFINE THRESHOLDS AND DETECT ANOMALIES
     # ----------------------------------------------------
-    # An anomaly is any value greater than the threshold we set.
+    # An anomaly is any value outside the set threshold.
     # Domain rule for this example:
-    # Anything above this value is suspicious.
+    # Anything outside the threshold is suspicious.
     LOG.info("Studying children's ages and heights to find anomalies...")
 
     # x is age in years, so 16 is the upper limit for kids
