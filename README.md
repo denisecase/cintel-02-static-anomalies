@@ -65,7 +65,8 @@ uv run python -m cintel.anomaly_detector
 
 ## Run the Reactive App
 
-From a VS Code terminal in the project root:
+From a VS Code terminal in the project root
+(hit CTRL + c to quit):
 
 ```shell
 uv run marimo run  src/cintel/app.py
