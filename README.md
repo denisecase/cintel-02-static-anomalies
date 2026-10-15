@@ -35,7 +35,7 @@ Each observation includes:
 - `height_inches` - height in inches.
 
 The example demonstrates threshold-based detection.
-The thresholds are instructional examples, not clinical standards.
+Thresholds are instructional examples, not clinical standards.
 
 ## Approach
 
@@ -74,8 +74,9 @@ uv run marimo run  src/cintel/app.py
 
 ## Results
 
-The pipeline identifies observations exceeding the example thresholds
-and writes the flagged records to `artifacts/anomalies.csv`.
+The pipeline identifies observations that
+meet the defined anomaly criteria
+and writes the flagged records to artifacts/anomalies.csv.
 Review the generated CSV to understand which observations were flagged
 and why.
 

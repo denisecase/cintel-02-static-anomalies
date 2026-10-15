@@ -22,7 +22,7 @@ def detect_clinic_anomalies(
     max_age_years: float,
     max_height_inches: float,
 ) -> pl.DataFrame:
-    """Return rows where age or height is at or above the given thresholds."""
+    """Return rows meeting one or more defined anomaly threshold conditions."""
     return df.filter(
         (pl.col("age_years") >= max_age_years)
         | (pl.col("height_inches") >= max_height_inches)
